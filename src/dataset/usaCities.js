@@ -1,4 +1,4 @@
-const cities =
+const usaCities =
 [
   
   {'city': 'Abbeville', 'state': 'Louisiana'},
@@ -5983,4 +5983,4 @@ const cities =
 {'city': 'Zuni Pueblo', 'state': 'New Mexico'},
   ]
 
-export default cities
+export default usaCities
