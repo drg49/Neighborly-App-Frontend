@@ -1,18 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
 .App {
   text-align: center;
 }
 
+body {
+  background-color: rgb(20, 20, 20);
+  color: #50c878;
+}
+
+a {
+  text-decoration: none;
+}
+
 // Home Page & Search
+
+#logo {
+  display: flex;
+  max-width: 371px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 64px;
+  
+
+  h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 52px;
+    margin: 0;
+    padding: 17px 0px;
+  }
+
+  img {
+    width: 77px;
+    height: 47px; 
+    padding-bottom: 5px;
+  }
+}
+
 
 #searchbar {
   margin-bottom: 20px;
   outline: none;
+  padding: 5px 7px;
+  width: 280px;
+  font-size: 17px;
 }
 
 #search-scroll {
  max-width: 320px;
- border: 1px solid;
+//  border: 1px solid white;
  margin: auto;
  max-height: 320px;
  overflow: auto;
+ border-radius: 3px;
+ background-color: whitesmoke;
+
+  p {
+    margin: 0;
+    border-bottom: 1px solid lightgray;    
+    padding: 12px;
+    cursor: pointer;
+    transition: 130ms;
+    color: black;
+  }
+
+  p:hover {
+    background-color: lightsteelblue;
+  }
+
 }

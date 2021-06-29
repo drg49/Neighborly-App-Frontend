@@ -1,8 +1,12 @@
-import SearchBar from "../components/SearchBar"
+import Search from "../components/Search"
+import emerald from "../components/emerald.gif"
 
 const Home = () => {
     return (
-    <SearchBar />
+    <>
+        <div id="logo"><h1>Emerald Vaults</h1><img src={emerald}/></div>
+        <Search />
+    </>
     )
 }
 

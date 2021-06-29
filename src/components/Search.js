@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import {Link} from 'react-router-dom'
 import usaCities from '../dataset/usaCities'
 
-const SearchBar = () => {
+
+const Search = () => {
 
     const [results, setResults] = useState(null)
 
@@ -19,7 +21,7 @@ const SearchBar = () => {
                 item.city.toLowerCase().startsWith(search.toLowerCase().replace( /\s\s+/g, ' ' ))
                 ).map((item, index) => {
                 return (
-                    <p key={index}>{item.city}, {item.state}</p>
+                    <Link to={`/${item.city}/${item.state}`}><p key={index}>{item.city}, {item.state}</p></Link>
                 )
                 })}
             </div>
@@ -38,4 +40,4 @@ const SearchBar = () => {
     )
 }
 
-export default SearchBar
+export default Search
