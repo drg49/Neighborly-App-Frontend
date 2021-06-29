@@ -4,7 +4,7 @@ import emerald from "../components/emerald.gif"
 const Home = () => {
     return (
     <>
-        <div id="logo"><h1>Emerald Vaults</h1><img src={emerald}/></div>
+        <div id="logo"><h1>Emerald Vaults</h1><img src={emerald} alt="Emerald gif"/></div>
         <Search />
     </>
     )

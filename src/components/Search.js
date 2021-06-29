@@ -33,7 +33,7 @@ const Search = () => {
 
     return (
         <>
-            <h2>Search for your city</h2>
+            <h2 style={{fontWeight: "100"}}>Search for your city</h2>
             <input type="text" onChange={handleChange} id="searchbar"/>
             {results}
         </>
