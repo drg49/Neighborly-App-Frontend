@@ -1,13 +1,14 @@
+import {Link}  from 'react-router-dom'
+
 const Vault = (props) => {
     
     const city = props.match.params.city
     const state = props.match.params.state
-
     
     return (
         <>
-            <h1>{city}</h1>
-            <h1>{state}</h1>
+            <h2>{city}, {state}</h2>
+            <Link to={`/${city}/${state}/post`}><button>Create a Post</button></Link>
         </>
     )
 

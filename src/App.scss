@@ -81,3 +81,39 @@ a {
   }
 
 }
+
+
+// FORM 
+
+#form-flex {
+  display: flex;
+  margin: auto;
+  max-width: 300px;
+  justify-content: space-between;
+}
+
+#create-form {
+  max-width: 500px;
+  margin: auto;
+  border: #50c878 1px solid;
+  padding: 20px;
+
+textarea {
+  margin-top: 20px;
+  resize: none;
+  width: 99%;
+  height: 186px;
+  outline: none;
+  border: 1px solid gray;
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+}
+
+#post-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 2px;
+}
+
+}

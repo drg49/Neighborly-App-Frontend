@@ -21,7 +21,7 @@ const Search = () => {
                 item.city.toLowerCase().startsWith(search.toLowerCase().replace( /\s\s+/g, ' ' ))
                 ).map((item, index) => {
                 return (
-                    <Link to={`/${item.city}/${item.state}`}><p key={index}>{item.city}, {item.state}</p></Link>
+                    <Link to={`/${item.city}/${item.state}/vault`}><p key={index}>{item.city}, {item.state}</p></Link>
                 )
                 })}
             </div>

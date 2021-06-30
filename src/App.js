@@ -1,19 +1,41 @@
+import { useState, createContext, useEffect } from 'react'
 import { Switch, Route } from 'react-router';
 import './App.scss';
 import Logo from './components/Logo';
 import Home from './pages/Home';
-import Vault from './pages/Vault'
+import Vault from './pages/Vault';
+import Form from './pages/Form';
+import Auth from './pages/Auth';
+
+export const GlobalCtx = createContext(null)
 
 function App() {
+
+  const [gState, setGState] = useState({
+    url: "http://localhost:4000", 
+    token: null
+  })
+
+  //SEEING IF ALREADY LOGGED IN
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("token"))
+    if (token) {
+      setGState({...gState, token: token.token})
+    }
+  }, [])
+
+
   return (
-    <div className="App">
-      <Logo />
-      <Switch>
-        <Route exact path="/" render={(rp) =>  <Home {...rp}/>} />
-        <Route path="/:city/:state" render={(rp) => <Vault {...rp}/>}/>
-      </Switch>
-      
-    </div>
+    <GlobalCtx.Provider value = {{gState, setGState}}>
+      <div className="App">
+        <Logo />
+        <Switch>
+          <Route exact path="/" render={(rp) =>  <Home {...rp}/>} />
+          <Route path="/:city/:state/vault" render={(rp) => <Vault {...rp}/>} />
+          <Route path="/:city/:state/post" render={(rp) => <Form {...rp}/>} />
+        </Switch>
+      </div>
+    </GlobalCtx.Provider>
   );
 }
 
