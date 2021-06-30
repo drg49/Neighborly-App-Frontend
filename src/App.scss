@@ -19,7 +19,7 @@ a {
 
 #logo {
   display: flex;
-  max-width: 390px;
+  max-width: 384px;
   margin: auto;
   justify-content: space-around;
   align-items: center;
@@ -36,11 +36,12 @@ a {
     font-size: 52px;
     margin: 0;
     padding: 17px 0px;
+    color: #50c878;
   }
 
   img {
-    width: 77px;
-    height: 47px; 
+    width: 63px;
+    height: 37px; 
     padding-bottom: 5px;
     pointer-events: none;
   }
