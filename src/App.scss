@@ -15,6 +15,10 @@ a {
   text-decoration: none;
 }
 
+input[type=submit] {
+  -webkit-appearance: none;
+}
+
 // Home Page & Search
 
 #logo {

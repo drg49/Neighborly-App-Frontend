@@ -11,25 +11,63 @@ const Form = (props) => {
         setWords(1000 - bodyRef.current.value.length)
     }
 
+    const [file, setFile] = useState(null)
+    const [img, setImg] = useState(null)
+    let base64;
+
+    const uploadImage = async (e) => {
+        const file = e.target.files[0];
+        setFile(file)
+        base64 = await convertBase64(file);
+        const str = base64
+        if (str.charAt(5) + str.charAt(6) + str.charAt(7) + str.charAt(8) + str.charAt(9) === "image") {
+            setImg(<img src={base64} alt="Your post" id="uploaded-img"/>)
+        } else {
+          setImg(<p>Please select an image file</p>)
+          setFile(null)
+        }
+    }
+
+    const convertBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+          const fileReader = new FileReader();
+          fileReader.readAsDataURL(file);
+  
+          fileReader.onload = () => {
+            resolve(fileReader.result)
+          }
+  
+          fileReader.onerror = (error) => {
+            reject(error)
+          }
+        })
+      }
+
+      
+
     return (
         <>
         <h2>{city}, {state}</h2>
         <form id="create-form">
             <div id="form-flex">
                 <div>
-                    <label for="regular">Post Publicly</label><br />
-                    <input type="radio" id="regular" checked="true" name="post"/>
+                    <label htmlFor="regular">Post Publicly</label><br />
+                    <input type="radio" id="regular" defaultChecked name="post" />
                 </div>
                 <div>
-                    <label for="regular">Post Anonymously</label><br />
-                    <input type="radio" id="anon" name="post"/>
+                    <label htmlFor="regular">Post Anonymously</label><br />
+                    <input type="radio" id="anon" name="post" />
                 </div>
             </div>
             <textarea ref={bodyRef} id="message" maxLength="1000" onChange={count} required></textarea>
                 <div id="post-bottom">
+                    <div style={{textAlign: "left"}}>
                     <p>Characters left: {words}</p>
-                    <input type="submit" value="Post"/>
+                    <input type="file" />
+                    </div>
+                    <input type="submit" value="Post" onChange={(e) => {uploadImage(e)}}/>
                 </div>
+            {img}
         </form>
         </>
     )
