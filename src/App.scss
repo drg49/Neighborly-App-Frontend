@@ -100,7 +100,7 @@ input[type=submit] {
   max-width: 500px;
   margin: auto;
   border: #50c878 1px solid;
-  // border-radius: 6px;
+  border-radius: 6px;
   padding: 20px;
 
   textarea {
@@ -143,7 +143,7 @@ input[type=submit] {
 @media screen and (max-width: 768px){
   #logo {
     h1 {
-      font-size: 34px;
+      font-size: 44px;
     }
   }
 }
