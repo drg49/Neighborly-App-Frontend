@@ -26,19 +26,17 @@ function App() {
     }
   }, [])
 
-  const [pathState, setPathState] = useState("/")
-
   return (
     <GlobalCtx.Provider value = {{gState, setGState}}>
       <div className="App">
         <Logo />
         <Switch>
           <Route exact path="/" render={(rp) =>  <Home {...rp}/>} />
-          <Route path="/:city/:state/vault" render={(rp) => <Vault {...rp}/>} />
-          <Route path="/:city/:state/post" render={(rp => gState.token ? <Form {...rp}/> : <Auth setPathState={setPathState} path={"/"}/>)} />
+          <Route path="/:city/:state/vault" render={(rp) => <Vault {...rp} />} />
+          <Route path="/:city/:state/post" render={(rp => gState.token ? <Form {...rp}/> : <Auth />)} />
           <Route path="/auth" render={(rp) => <Auth />}/> 
-          <Route path="/login" render={(rp) => <Login {...rp} path={pathState} />}/>
-          <Route path="/signup" render={(rp) => <Signup {...rp} path={pathState} />}/>
+          <Route path="/login" render={(rp) => <Login {...rp} />}/>
+          <Route path="/signup" render={(rp) => <Signup {...rp} />}/>
         </Switch>
       </div>
     </GlobalCtx.Provider>

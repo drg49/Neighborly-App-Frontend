@@ -50,8 +50,7 @@ const Login = (props) => {
             localStorage.setItem("user", data.username)
             setGState({...gState, token: data.token})
             setForm(blank) //reset the form
-            props.history.push(props.path)
-            // window.location.reload()
+            props.history.push(localStorage.getItem("path") || "/")
             }
         })
     }

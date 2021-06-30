@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Auth = ({setPathState, path}) => {
-
-    setPathState(path) //For instance, if the user clicks on the upload btn before they log in, then after they log in they will be taken to the upload page
+const Auth = () => {
 
     return (
         <div id="auth">

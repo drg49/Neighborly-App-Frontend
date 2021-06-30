@@ -6,7 +6,7 @@ import PostCard from '../components/PostCard'
 const Vault = (props) => {
     
     const { gState } = useContext(GlobalCtx)
-    const { url } = gState
+    const { url, token } = gState
 
     const city = props.match.params.city
     const state = props.match.params.state
@@ -27,9 +27,13 @@ const Vault = (props) => {
     }
 
     useEffect(() => {
+        if (token) {
+            return null
+        } else {
+            localStorage.setItem("path", `/${city}/${state}/post`)
+        }
         getPosts()
     }, [])
-
 
     return (
         <>
