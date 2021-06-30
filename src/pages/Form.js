@@ -54,6 +54,7 @@ const Form = (props) => {
         let username;
         document.getElementById("anon").checked ? username = "Anonymous" : username = localStorage.getItem("user")
         const note = document.getElementById("note").value
+        const location = city + state;
         if (file === null) { //If only text is added
             fetch(url + "/post/", {
               method: "post",
@@ -61,7 +62,7 @@ const Form = (props) => {
                   "Content-Type": "application/json",
                   "Authorization": "bearer " + token
                 },
-              body: JSON.stringify({note, username})
+              body: JSON.stringify({note, username, location})
             })
         } else { //If an image is also added
             const formData = new FormData();
@@ -82,7 +83,7 @@ const Form = (props) => {
                             "Content-Type": "application/json",
                             "Authorization": "bearer " + token
                         },
-                        body: JSON.stringify({note, username})
+                        body: JSON.stringify({note, username, location})
                     })
                 })
         }
