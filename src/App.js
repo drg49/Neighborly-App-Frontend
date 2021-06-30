@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Vault from './pages/Vault';
 import Form from './pages/Form';
 import Auth from './pages/Auth';
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 export const GlobalCtx = createContext(null)
 
@@ -24,6 +26,7 @@ function App() {
     }
   }, [])
 
+  const [pathState, setPathState] = useState("/")
 
   return (
     <GlobalCtx.Provider value = {{gState, setGState}}>
@@ -32,7 +35,10 @@ function App() {
         <Switch>
           <Route exact path="/" render={(rp) =>  <Home {...rp}/>} />
           <Route path="/:city/:state/vault" render={(rp) => <Vault {...rp}/>} />
-          <Route path="/:city/:state/post" render={(rp) => <Form {...rp}/>} />
+          <Route path="/:city/:state/post" render={(rp => gState.token ? <Form {...rp}/> : <Auth setPathState={setPathState} path={"/"}/>)} />
+          <Route path="/auth" render={(rp) => <Auth />}/> 
+          <Route path="/login" render={(rp) => <Login {...rp} path={pathState} />}/>
+          <Route path="/signup" render={(rp) => <Signup {...rp} path={pathState} />}/>
         </Switch>
       </div>
     </GlobalCtx.Provider>

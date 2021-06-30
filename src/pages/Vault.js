@@ -10,7 +10,7 @@ const Vault = (props) => {
 
     const city = props.match.params.city
     const state = props.match.params.state
-    
+
     const [posts, setPosts] = useState(null)
 
     const getPosts = () => {
@@ -28,7 +28,7 @@ const Vault = (props) => {
 
     useEffect(() => {
         getPosts()
-    })
+    }, [])
 
 
     return (

@@ -141,6 +141,89 @@ input[type=submit] {
 }
 
 
+
+// AUTH //
+#load-gif {
+  margin-top: 20px;
+  border: none;
+  object-fit: contain;
+  width: 50px;
+}
+
+#auth  {
+  margin-top: 65px;
+
+  p {
+    max-width: 544px;
+    margin: auto;
+    margin-bottom: 34px;
+  }
+
+  button {
+    font-size: 17px;
+    display: block;
+    padding: 14px 16px;
+    margin: auto;
+    margin-top: 20px;
+    width: 366px;
+    transition: all 200ms;
+    border: none;
+    border-radius: 6px;
+  }
+}
+
+#account-form {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#logsign { 
+  input {
+    display: block;
+    width: 330px;
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 14px 16px;
+  }
+
+  #login, #signup {
+    margin: auto;
+    margin-top: 20px;
+    width: 367px;
+    border: none;
+    border-radius: 6px;
+    transition: all 200ms;
+    outline: none;
+  }
+}
+
+#form-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+#margin-space {
+  margin-left: 5px;
+}
+
+#error-text {
+  color: red;
+  font-weight: 500;
+  margin: auto;
+  word-wrap: break-word;
+  width: 357px;
+}
+
+#title {
+  margin: auto;
+  font-size: 17px;
+  padding: 2px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+
+
 @media screen and (max-width: 768px){
   #logo {
     h1 {
