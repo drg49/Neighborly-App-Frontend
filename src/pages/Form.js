@@ -55,6 +55,7 @@ const Form = (props) => {
         document.getElementById("anon").checked ? username = "Anonymous" : username = localStorage.getItem("user")
         const note = document.getElementById("note").value
         const location = city + state;
+        const realuser = localStorage.getItem("user")
         if (file === null) { //If only text is added
             fetch(url + "/post/", {
               method: "post",
@@ -62,7 +63,7 @@ const Form = (props) => {
                   "Content-Type": "application/json",
                   "Authorization": "bearer " + token
                 },
-              body: JSON.stringify({note, username, location})
+              body: JSON.stringify({note, username, location, realuser})
             })
         } else { //If an image is also added
             const formData = new FormData();

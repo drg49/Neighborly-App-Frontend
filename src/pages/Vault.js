@@ -20,16 +20,14 @@ const Vault = (props) => {
         .then(data => {
             setPosts(data.map((item, index) => {
                 return (
-                    <PostCard key={index} username={item.username} note={item.note} image={item.image}/>
+                    <PostCard key={index} username={item.username} note={item.note} image={item.image} realuser={item.realuser}/>
                 ) 
             }))
         })
     }
 
     useEffect(() => {
-        if (token) {
-            return null
-        } else {
+        if (!token) {
             localStorage.setItem("path", `/${city}/${state}/post`)
         }
         getPosts()
