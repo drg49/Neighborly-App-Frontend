@@ -20,7 +20,7 @@ const Vault = (props) => {
         .then(data => {
             setPosts(data.map((item, index) => {
                 return (
-                    <PostCard key={index} username={item.username} note={item.note} image={item.image} realuser={item.realuser}/>
+                    <PostCard key={index} username={item.username} note={item.note} image={item.image} realuser={item.realuser} id={item._id}/>
                 ) 
             }))
         })

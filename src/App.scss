@@ -137,7 +137,9 @@ input[type=submit] {
 }
 
 #post-img {
-  width: 150px;
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: contain;
 }
 
 
