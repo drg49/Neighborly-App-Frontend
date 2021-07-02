@@ -16,7 +16,7 @@ const Signup = (props) => {
 
     const [form, setForm] = useState(blank)
     const [errorText, setErrorText] = useState("")
-    const [submit, setSubmit] = useState(<input type="submit" value="Sign Up" id="signup"/>)
+    const [submit, setSubmit] = useState(<input type="submit" value="Register" id="signup"/>)
 
     const handleChange = (event) => {
         setForm({...form, [event.target.name]: event.target.value})
@@ -41,7 +41,7 @@ const Signup = (props) => {
                 setForm(blank)
                 if(data.error){
                     setErrorText("There is already an account with that username. Please choose another one.")
-                    setSubmit(<input type="submit" value="Sign Up" id="signup"/>)
+                    setSubmit(<input type="submit" value="Register" id="signup"/>)
                 } else {
                     props.history.push("/login")
                 }

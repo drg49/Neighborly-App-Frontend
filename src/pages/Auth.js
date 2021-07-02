@@ -5,8 +5,8 @@ const Auth = () => {
     return (
         <div id="auth">
             <p>Please login or register to continue.</p>
-            <Link to="/login"><button>Login</button></Link>
-            <Link to="/signup"><button>Signup</button></Link>
+            <Link to="/login"><button id="login">Login</button></Link>
+            <Link to="/signup"><button id="signup">Create Account</button></Link>
         </div>
     )
 }

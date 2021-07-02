@@ -1,6 +1,10 @@
 import { useContext, useState } from 'react'
 import { GlobalCtx } from '../App'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 const moment = require('moment')
+
+const trash = <FontAwesomeIcon icon={faTrash} />
 
 const PostCard = ({username, note, image, realuser, id, date}) => {
 
@@ -34,10 +38,10 @@ const PostCard = ({username, note, image, realuser, id, date}) => {
                 <p>{username}</p>
                 <p>{moment(date).format('MM-DD-YYYY')}</p>
             </section>
-            
-        <p>{note}</p>
+        <p id="post-txt">{note}</p>
         {image ? <img src={`https://drg-s3-4.s3.amazonaws.com/${image}`} alt={`Post by ${username}`} id="post-img" /> : null}
-        {currentUser === realuser ? image ? <div onClick={() => handleDelete(image)}>deleteimg</div> : <div onClick={() => postOnlyDelete(id)}>deletepost</div> : null}
+        {currentUser === realuser ? image ? <div id="trash" onClick={() => handleDelete(image)}>{trash}</div> : 
+        <div id="trash" onClick={() => postOnlyDelete(id)}>{trash}</div> : null}
         </div>
     )
 }

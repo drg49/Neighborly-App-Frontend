@@ -114,7 +114,7 @@ const Form = (props) => {
                         <p>Characters left: {words}</p>
                         <input type="file" onChange={(e) => {uploadImage(e)}}/>
                     </div>
-                    <input type="submit" value="Post" />
+                    <button type="submit">Post</button>
                 </div>
             {img}
         </form>
