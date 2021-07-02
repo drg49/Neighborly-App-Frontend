@@ -2,6 +2,10 @@ import { useContext, useEffect, useState } from 'react'
 import { GlobalCtx } from '../App'
 import {Link}  from 'react-router-dom'
 import PostCard from '../components/PostCard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+
+const user = <FontAwesomeIcon icon={faUser} size="lg"/>
 
 const Vault = (props) => {
     
@@ -26,17 +30,28 @@ const Vault = (props) => {
         })
     }
 
-    useEffect(() => {
+    const handleProfileClick = () => {
+        if (!token) {
+            localStorage.setItem("path", `/${city}/${state}/vault`)
+        }
+        props.history.push("/myprofile")
+    }
+
+    const handleFormClick = () => {
         if (!token) {
             localStorage.setItem("path", `/${city}/${state}/post`)
         }
+        props.history.push(`/${city}/${state}/post`)
+    }
+
+    useEffect(() => {
         getPosts()
     }, [])
 
     return (
         <>
-            <h2>{city}, {state}</h2>
-            <Link to={`/${city}/${state}/post`}><button>Create a Post</button></Link><br />
+            <div id="nav"><h2>{city}, {state}</h2><div id="user-icon" onClick={handleProfileClick}>{user}</div></div>
+            <button onClick={handleFormClick}>Create a Post</button><br />
             {posts}
         </>
     )

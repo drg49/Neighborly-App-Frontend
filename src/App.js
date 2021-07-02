@@ -8,6 +8,7 @@ import Form from './pages/Form';
 import Auth from './pages/Auth';
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import MyProfile from './pages/MyProfile';
 
 export const GlobalCtx = createContext(null)
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/auth" render={(rp) => <Auth />}/> 
           <Route path="/login" render={(rp) => <Login {...rp} />}/>
           <Route path="/signup" render={(rp) => <Signup {...rp} />}/>
+          <Route path="/myprofile" render={(rp => gState.token ? <MyProfile {...rp}/> : <Auth />)}/>
         </Switch>
       </div>
     </GlobalCtx.Provider>

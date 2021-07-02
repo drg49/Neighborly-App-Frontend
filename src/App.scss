@@ -22,13 +22,22 @@ input[type=submit] {
 
 // Home Page & Search
 
+#nav {
+  display: flex;
+  align-items: center;
+  max-width: 622px;
+  padding: 0px 10px;
+  margin: auto;
+  justify-content: space-between;
+}
+
 #logo {
   display: flex;
   max-width: 370px;
   margin: auto;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 64px;
+  margin-bottom: 53px;
   -webkit-touch-callout: none; 
   -webkit-user-select: none; 
   -khtml-user-select: none; 
@@ -184,7 +193,6 @@ input[type=submit] {
 #post-img {
   width: 100%;
   max-height: 600px;
-  
   object-fit: contain;
 }
 
@@ -201,7 +209,6 @@ input[type=submit] {
   }
 
 }
-
 
 // AUTH //
 #load-gif {
@@ -294,11 +301,36 @@ input[type=submit] {
   margin-bottom: 20px;
 }
 
+#user-icon {
+  color: #50c878;
+}
 
-@media screen and (max-width: 768px){
+#user-icon:hover {
+  opacity: 0.85;
+}
+
+#logout {
+  cursor: pointer;
+}
+
+#logout:hover {
+  opacity: 0.85;
+}
+
+@media screen and (max-width: 1024px){
   #logo {
     h1 {
       font-size: 44px;
     }
+    max-width: 322px;
   }
+}
+
+@media screen and (max-width: 622px){
+  #post-card {
+    border-left: none;
+    border-right: none;
+    border-radius: 0%;
+  }
+
 }
