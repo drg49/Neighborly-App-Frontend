@@ -24,7 +24,6 @@ input[type=submit] {
 
 #logo {
   display: flex;
-  // max-width: 384px;
   max-width: 370px;
   margin: auto;
   justify-content: space-around;
@@ -154,8 +153,17 @@ input[type=submit] {
   }
 }
 
-#trash {
+#post-flex {
+  display: flex;
   padding: 10px;
+  justify-content: flex-end;
+}
+
+#trash {
+  margin-right: 18px;
+}
+
+#trash, #edit {
   cursor: pointer;
   transition: 150ms;
   width: fit-content;
@@ -163,6 +171,10 @@ input[type=submit] {
 
 #trash:hover {
   color: crimson;
+}
+
+#edit:hover {
+  color: #00A400;
 }
 
 #post-txt {
@@ -176,6 +188,19 @@ input[type=submit] {
   object-fit: contain;
 }
 
+#create-caption {
+
+  textarea {
+    resize: none;
+    width: 99%;
+    height: 100px;
+    outline: none;
+    border: 1px solid gray;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+  }
+
+}
 
 
 // AUTH //
@@ -233,8 +258,6 @@ input[type=submit] {
   }
 }
 
-
-
 #login {
   background-color: #1877F2;
   color: white;
@@ -270,7 +293,6 @@ input[type=submit] {
   outline: none;
   margin-bottom: 20px;
 }
-
 
 
 @media screen and (max-width: 768px){
