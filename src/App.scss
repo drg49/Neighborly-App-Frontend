@@ -134,11 +134,30 @@ input[type=submit] {
 
 #post-card {
   border: 1px solid;
+  border-radius: 6px;
+  max-width: 610px;
+  margin: 25px auto;
+  background-color: blanchedalmond;
+  color: black;
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px solid;
+
+    p {
+      margin: 12px 0px;
+    }
+  }
+
 }
 
 #post-img {
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 600px;
+  max-height: 600px;
   object-fit: contain;
 }
 

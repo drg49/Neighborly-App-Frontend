@@ -1,4 +1,5 @@
 import {useState, useRef, useContext} from 'react'
+import { useHistory } from 'react-router'
 import { GlobalCtx } from '../App'
 
 const Form = (props) => {
@@ -8,6 +9,8 @@ const Form = (props) => {
 
     const city = props.match.params.city
     const state = props.match.params.state
+
+    let history = useHistory()
     
     const bodyRef = useRef()
 
@@ -64,7 +67,7 @@ const Form = (props) => {
                   "Authorization": "bearer " + token
                 },
               body: JSON.stringify({note, username, location, realuser})
-            })
+            }).then(() => history.push(`/${city}/${state}/vault`))
         } else { //If an image is also added
             const formData = new FormData();
             formData.append("image", file)
@@ -86,7 +89,7 @@ const Form = (props) => {
                         },
                         body: JSON.stringify({note, username, location})
                     })
-                })
+                }).then(() => history.push(`/${city}/${state}/vault`))
         }
     }  
 

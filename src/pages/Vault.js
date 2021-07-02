@@ -18,9 +18,9 @@ const Vault = (props) => {
             method: "get"
         }).then(response => response.json())
         .then(data => {
-            setPosts(data.map((item, index) => {
+            setPosts(data.reverse().map((item, index) => {
                 return (
-                    <PostCard key={index} username={item.username} note={item.note} image={item.image} realuser={item.realuser} id={item._id}/>
+                    <PostCard key={index} username={item.username} note={item.note} image={item.image} realuser={item.realuser} id={item._id} date={item.created_at}/>
                 ) 
             }))
         })
