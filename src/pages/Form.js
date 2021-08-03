@@ -80,7 +80,6 @@ const Form = (props) => {
                     body: formData
                 }).then(response => response.json())
                 .then(data => {
-                    console.log(data)
                     fetch(url + "/post/" + data._id, {
                         method: "put",
                         headers: {
