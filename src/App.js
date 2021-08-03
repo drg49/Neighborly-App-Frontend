@@ -15,7 +15,7 @@ export const GlobalCtx = createContext(null)
 function App() {
 
   const [gState, setGState] = useState({
-    url: "http://localhost:4000", 
+    url: /*"http://localhost:4000"*/'https://emerald-vaults-backend.herokuapp.com', 
     token: null
   })
 
