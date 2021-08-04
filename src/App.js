@@ -12,6 +12,7 @@ import MyProfile from './pages/MyProfile';
 
 export const GlobalCtx = createContext(null)
 
+
 function App() {
 
   const [gState, setGState] = useState({
