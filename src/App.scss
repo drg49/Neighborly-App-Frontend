@@ -51,6 +51,11 @@ input[type=submit] {
     margin: 0;
     padding: 17px 0px;
     color: #50c878;
+    transition: 100ms;
+  }
+
+  h1:hover {
+    opacity: 0.80;
   }
 
   img {
@@ -61,7 +66,6 @@ input[type=submit] {
   }
   
 }
-
 
 #searchbar {
   margin-bottom: 20px;
@@ -96,8 +100,16 @@ input[type=submit] {
 
 }
 
-
 // FORM 
+
+#vault-location {
+  color: #50c878;
+  transition: 130ms;
+}
+
+#vault-location:hover {
+  opacity: 0.85;
+}
 
 #form-flex {
   display: flex;

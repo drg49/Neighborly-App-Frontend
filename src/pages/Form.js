@@ -1,7 +1,7 @@
 import {useState, useRef, useContext} from 'react'
 import { useHistory } from 'react-router'
 import { GlobalCtx } from '../App'
-import loading from '../components/Loading.gif'
+import { Link } from 'react-router-dom'
 
 const Form = (props) => {
 
@@ -70,7 +70,7 @@ const Form = (props) => {
                 },
               body: JSON.stringify({note, username, location, realuser})
             }).then(() => history.push(`/${city}/${state}/vault`))
-        } else { //If an image is also added
+        } else if (file !== null) { //If an image is also added
             const formData = new FormData();
             formData.append("image", file)
                 fetch(url + "/post/", {
@@ -91,14 +91,14 @@ const Form = (props) => {
                         body: JSON.stringify({note, username, location})
                     })
                 }).then(history.push(`/${city}/${state}/vault`))
-                        .then(() => window.location.reload())
+                        .then(setTimeout(() => window.location.reload(), 500))
         }
     }  
 
 
     return (
         <>
-        <h2>{city}, {state}</h2>
+        <Link to={`/${city}/${state}/vault`}><h2 id="vault-location">{city}, {state}</h2></Link>
         <form id="create-form" onSubmit={handleCreate}>
             <div id="form-flex">
                 <div>
