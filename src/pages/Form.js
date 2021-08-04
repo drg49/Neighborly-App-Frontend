@@ -90,12 +90,8 @@ const Form = (props) => {
                         },
                         body: JSON.stringify({note, username, location})
                     })
-                }).then(
-                    setPostBtn(<img src={loading} alt="Loading graphic" id="load-gif"/>))
-                    .then(
-                        setTimeout(function(){
-                            history.push(`/${city}/${state}/vault`)
-                        }, 1000))
+                }).then(history.push(`/${city}/${state}/vault`))
+                        .then(() => window.location.reload())
         }
     }  
 
