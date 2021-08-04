@@ -1,7 +1,6 @@
 import {useState, useRef, useContext} from 'react'
 import { useHistory } from 'react-router'
 import { GlobalCtx } from '../App'
-import loading from '../components/Loading.gif'
 
 const Form = (props) => {
 
@@ -22,7 +21,7 @@ const Form = (props) => {
 
     const [file, setFile] = useState(null)
     const [img, setImg] = useState(null)
-    const [postBtn, setPostBtn] = useState(<button type="submit">Post</button>)
+    
     let base64;
 
     const uploadImage = async (e) => {
@@ -95,7 +94,6 @@ const Form = (props) => {
         }
     }  
 
-
     return (
         <>
         <h2>{city}, {state}</h2>
@@ -116,7 +114,7 @@ const Form = (props) => {
                         <p>Characters left: {words}</p>
                         <input type="file" onChange={(e) => {uploadImage(e)}}/>
                     </div>
-                    {postBtn}
+                    <button type="submit">Post</button>
                 </div>
             {img}
         </form>
