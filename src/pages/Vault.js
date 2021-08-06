@@ -4,6 +4,7 @@ import {Link}  from 'react-router-dom'
 import PostCard from '../components/PostCard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import loadingGif from '../components/Loading.gif'
 
 const user = <FontAwesomeIcon icon={faUser} size="lg"/>
 
@@ -48,11 +49,13 @@ const Vault = (props) => {
         getPosts()
     }, [])
 
+    console.log(posts)
+
     return (
         <>
             <div id="nav"><h2>{city}, {state}</h2><div id="user-icon" onClick={handleProfileClick}>{user}</div></div>
             <button onClick={handleFormClick}>Create a Post</button><br />
-            {posts}
+            {posts ? posts : <img src={loadingGif} alt="Posts are loading" id="load-gif" />}
         </>
     )
 
