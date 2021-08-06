@@ -249,6 +249,11 @@ input[type=submit] {
     transition: all 200ms;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: .85;
   }
 }
 
@@ -281,11 +286,13 @@ input[type=submit] {
   background-color: #1877F2;
   color: white;
   letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 #signup {
   background-color: #00A400;
   color: white;
+  cursor: pointer;
 }
 
 #form-bottom {
@@ -295,6 +302,11 @@ input[type=submit] {
 
 #margin-space {
   margin-left: 5px;
+  cursor: pointer;
+}
+
+#margin-space:hover, #signup:hover, #login:hover {
+  opacity: 0.85;
 }
 
 #error-text {
@@ -328,6 +340,10 @@ input[type=submit] {
 
 #logout:hover {
   opacity: 0.85;
+}
+
+#nullMessage {
+  padding-top: 35px;
 }
 
 @media screen and (max-width: 1024px){

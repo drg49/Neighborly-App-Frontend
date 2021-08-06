@@ -56,6 +56,7 @@ const Form = (props) => {
 
     const handleCreate = (e) => {
         e.preventDefault()
+        setPostBtn(null)
         let username;
         document.getElementById("anon").checked ? username = "Anonymous" : username = localStorage.getItem("user")
         const note = document.getElementById("note").value

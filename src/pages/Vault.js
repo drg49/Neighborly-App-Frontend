@@ -49,13 +49,13 @@ const Vault = (props) => {
         getPosts()
     }, [])
 
-    console.log(posts)
+    const message = <p id="nullMessage">Be the first to post in your neighborhood!</p>
 
     return (
         <>
             <div id="nav"><h2>{city}, {state}</h2><div id="user-icon" onClick={handleProfileClick}>{user}</div></div>
             <button onClick={handleFormClick}>Create a Post</button><br />
-            {posts ? posts : <img src={loadingGif} alt="Posts are loading" id="load-gif" />}
+            {posts ? posts.length === 0 ? message : posts : <img src={loadingGif} alt="Posts are loading" id="load-gif" />}
         </>
     )
 
