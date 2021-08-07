@@ -9,6 +9,7 @@ import Auth from './pages/Auth';
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import MyProfile from './pages/MyProfile';
+import Success from './pages/Success';
 
 export const GlobalCtx = createContext(null)
 
@@ -41,6 +42,9 @@ function App() {
           />
           <Route path="/:city/:state/post" 
             render={(rp => gState.token ? <Form {...rp}/> : <Auth />)} 
+          />
+          <Route path="/:city/:state/success" 
+            render={(rp => gState.token ? <Success {...rp}/> : <Auth />)} 
           />
           <Route path="/auth" 
             render={(rp) => <Auth />}
