@@ -33,7 +33,7 @@ input[type=submit] {
 
 #logo {
   display: flex;
-  max-width: 275px;
+  max-width: 214px;
   margin: auto;
   justify-content: space-around;
   align-items: center;
@@ -367,7 +367,7 @@ input[type=submit] {
 @media screen and (max-width: 1024px){
   #logo {
     h1 {
-      font-size: 36px;
+      font-size: 39px;
     }
     
     img {
@@ -375,7 +375,7 @@ input[type=submit] {
       height: 31px;
     }
 
-    max-width: 220px;
+    max-width: 164px;
   }
 }
 
