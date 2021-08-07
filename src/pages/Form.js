@@ -91,10 +91,18 @@ const Form = (props) => {
                         },
                         body: JSON.stringify({note, username, location})
                     })
-                }).then(props.history.push(`/${city}/${state}/success`))
+                }).then(setSuccessMessage(
+                <>
+                    <p id="success-message">Your post was added to {city}, {state}!</p>
+                    <Link to={`/${city}/${state}/vault`}><div id="go-to-post">Go to post</div></Link>
+                </>
+                ))
                         
         }
     }  
+
+    const [successMessage, setSuccessMessage] = useState(null)
+
 
     return (
         <>
@@ -120,6 +128,7 @@ const Form = (props) => {
                 </div>
             {img}
         </form>
+        {successMessage}
         </>
     )
 }
