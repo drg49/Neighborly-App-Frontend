@@ -92,7 +92,7 @@ const Form = (props) => {
                         body: JSON.stringify({note, username, location})
                     })
                 }).then(history.push(`/${city}/${state}/vault`))
-                        .then(setTimeout(() => window.location.reload(), 2000))
+                        // .then(setTimeout(() => window.location.reload(), 2000))
         }
     }  
 
