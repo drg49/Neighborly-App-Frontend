@@ -346,6 +346,24 @@ input[type=submit] {
   padding-top: 35px;
 }
 
+#success-message {
+  font-size: 20px;
+}
+
+#go-to-post {
+  color: white;
+  width: fit-content;
+  margin: auto;
+  border: 1px solid red;
+  padding: 10px 15px;
+  background: red;
+  border-radius: 6px;
+}
+
+#go-to-post:hover {
+  opacity: 0.85;
+}
+
 @media screen and (max-width: 1024px){
   #logo {
     h1 {
