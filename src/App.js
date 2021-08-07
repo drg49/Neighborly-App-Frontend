@@ -17,7 +17,8 @@ function App() {
 
   const [gState, setGState] = useState({
     url: /*"http://localhost:4000"*/'https://ev-backend-1.herokuapp.com', 
-    token: null
+    token: null,
+    refresh: false
   })
 
   //SEEING IF ALREADY LOGGED IN
