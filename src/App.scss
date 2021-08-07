@@ -346,20 +346,20 @@ input[type=submit] {
   padding-top: 35px;
 }
 
-// @media screen and (max-width: 1024px){
-//   #logo {
-//     h1 {
-//       font-size: 36px;
-//     }
+@media screen and (max-width: 1024px){
+  #logo {
+    h1 {
+      font-size: 36px;
+    }
     
-//     img {
-//       width: 56px;
-//       height: 31px;
-//     }
+    img {
+      width: 56px;
+      height: 31px;
+    }
 
-//     // max-width: 322px;
-//   }
-// }
+    max-width: 220px;
+  }
+}
 
 @media screen and (max-width: 622px){
   #post-card {
