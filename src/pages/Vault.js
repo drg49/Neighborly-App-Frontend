@@ -10,8 +10,8 @@ const user = <FontAwesomeIcon icon={faUser} size="lg"/>
 
 const Vault = (props) => {
     
-    const { gState, setGState } = useContext(GlobalCtx)
-    const { url, token, refresh } = gState
+    const { gState } = useContext(GlobalCtx)
+    const { url, token } = gState
 
     const city = props.match.params.city
     const state = props.match.params.state
@@ -46,10 +46,6 @@ const Vault = (props) => {
     }
 
     useEffect(() => {
-        if (refresh) {
-            setGState({...gState, refresh: false})
-            setTimeout(() => window.location.reload(), 1000)
-        }
         getPosts()
     }, [])
 

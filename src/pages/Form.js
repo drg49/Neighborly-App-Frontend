@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Form = (props) => {
 
-    const { gState, setGState } = useContext(GlobalCtx)
+    const { gState } = useContext(GlobalCtx)
     const { url, token } = gState
 
     const city = props.match.params.city
@@ -91,8 +91,7 @@ const Form = (props) => {
                         },
                         body: JSON.stringify({note, username, location})
                     })
-                }).then(setGState({...gState, refresh: true}))
-                .then(history.push(`/${city}/${state}/vault`))
+                }).then(history.push(`/${city}/${state}/vault`))
                         
         }
     }  
