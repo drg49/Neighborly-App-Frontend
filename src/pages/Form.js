@@ -83,6 +83,7 @@ const Form = (props) => {
                     body: formData
                 }).then(response => response.json())
                 .then(data => {
+                    console.log("ready")
                     fetch(url + "/post/" + data._id, {
                         method: "put",
                         headers: {
@@ -90,8 +91,11 @@ const Form = (props) => {
                             "Authorization": "bearer " + token
                         },
                         body: JSON.stringify({note, username, location})
+                    }).then(response => response.json())
+                    .then(data => {
+                        props.history.push(`/${city}/${state}/success`)
                     })
-                }).then(props.history.push(`/${city}/${state}/success`))
+                })//.then(props.history.push(`/${city}/${state}/success`))
                         
         }
     }  
