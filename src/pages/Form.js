@@ -2,6 +2,7 @@ import {useState, useRef, useContext} from 'react'
 import { useHistory } from 'react-router'
 import { GlobalCtx } from '../App'
 import { Link } from 'react-router-dom'
+import loadgif from '../components/Loading.gif'
 
 const Form = (props) => {
 
@@ -63,6 +64,7 @@ const Form = (props) => {
         const location = city + state;
         const realuser = localStorage.getItem("user")
         if (file === null) { //If only text is added
+            setPostBtn(<img src={loadgif} id="load-gif" alt="Uploading"/>)
             fetch(url + "/post/", {
               method: "post",
               headers: {
@@ -70,8 +72,9 @@ const Form = (props) => {
                   "Authorization": "bearer " + token
                 },
               body: JSON.stringify({note, username, location, realuser})
-            }).then(() => history.push(`/${city}/${state}/success`))
+            }).then(() => history.push(`/${city}/${state}/vault`))
         } else if (file !== null) { //If an image is also added
+            setPostBtn(<img src={loadgif} id="load-gif" alt="Uploading"/>)
             const formData = new FormData();
             formData.append("image", file)
                 fetch(url + "/post/", {
@@ -93,9 +96,9 @@ const Form = (props) => {
                         body: JSON.stringify({note, username, location})
                     }).then(response => response.json())
                     .then(data => {
-                        props.history.push(`/${city}/${state}/success`)
+                        props.history.push(`/${city}/${state}/vault`)
                     })
-                })//.then(props.history.push(`/${city}/${state}/success`))
+                })
                         
         }
     }  
