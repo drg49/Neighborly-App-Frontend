@@ -70,7 +70,7 @@ const Form = (props) => {
                   "Authorization": "bearer " + token
                 },
               body: JSON.stringify({note, username, location, realuser})
-            }).then(() => history.push(`/${city}/${state}/vault`))
+            }).then(() => history.push(`/${city}/${state}/success`))
         } else if (file !== null) { //If an image is also added
             const formData = new FormData();
             formData.append("image", file)
