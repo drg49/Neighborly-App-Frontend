@@ -20,6 +20,14 @@ input[type=submit] {
   -webkit-appearance: none;
 }
 
+input[type=radio] {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
 // Home Page & Search
 
 #nav {
@@ -346,6 +354,44 @@ input[type=submit] {
   padding-top: 35px;
 }
 
+#request-city {
+  margin-top: 40px;
+
+  p {
+    font-style: italic;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    margin-bottom: 21px;
+  }
+
+  a {
+    background-color: crimson;
+    width: fit-content;
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+}
+
+#contact-form {
+  border: 1px solid;
+  border-radius: 6px;
+  width: fit-content;
+  margin: auto;
+  text-align: left;
+  padding: 15px;
+
+  input, textarea {
+    margin-top: 2px;
+    margin-bottom: 8px;
+    outline: none;
+  }
+
+  textarea {
+    width: 265px;
+    resize: none;
+  }
+
+}
 
 @media screen and (max-width: 1024px){
   #logo {
