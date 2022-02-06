@@ -28,7 +28,6 @@ const Form = (props) => {
 
     const uploadImage = async (e) => {
         const file = e.target.files[0];
-        console.log(file)
         setFile(file)
         base64 = await convertBase64(file);
         const str = base64
@@ -86,7 +85,6 @@ const Form = (props) => {
                     body: formData
                 }).then(response => response.json())
                 .then(data => {
-                    console.log("ready")
                     fetch(url + "/post/" + data._id, {
                         method: "put",
                         headers: {

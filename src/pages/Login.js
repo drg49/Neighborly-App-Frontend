@@ -37,7 +37,6 @@ const Login = (props) => {
         .then(response => response.json())
         .then((data) => {
             if (data.error === "User Does Not Exist") {
-                console.log("user failed")
                 setErrorText("Username does not exist.")
                 setSubmit(<input type="submit" value="Login" id="login"/>)
                 setRegister(<><p>Dont have an account?</p><Link to="/signup"><p id="margin-space">Register</p></Link></>)
