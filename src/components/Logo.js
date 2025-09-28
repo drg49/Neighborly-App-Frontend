@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom"
-import emerald from "./emerald.gif"
+import { Link } from "react-router-dom";
 
 const Logo = () => {
-    return <Link to="/"><div id="logo"><h1>Vaults</h1><img src={emerald} alt="Emerald gif"/></div></Link>
-}
+  return (
+    <Link to="/">
+      <div id="logo">
+        <h1>Neighborly</h1>
+      </div>
+    </Link>
+  );
+};
 
-export default Logo
+export default Logo;

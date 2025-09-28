@@ -1,4 +1,4 @@
-# The Vaults App
+# The Neighborly App
 
 Created by Daniel Gavin
 
