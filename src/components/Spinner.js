@@ -5,6 +5,7 @@ const Spinner = ({
   height = 4,
   color = "var(--accent)",
   text,
+  style = {},
 }) => {
   const gradientId = "barGradient";
   const maskId = "barMask";
@@ -16,6 +17,7 @@ const Spinner = ({
         flexDirection: "column",
         alignItems: "center",
         gap: 8,
+        ...style,
       }}
     >
       <svg width={width} height={height} style={{ overflow: "visible" }}>

@@ -33,7 +33,9 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const { username, password } = form;
-    setSubmit(<Spinner width={120} text="Logging in..." />);
+    setSubmit(
+      <Spinner width={120} style={{ marginTop: "1rem" }} text="Logging in..." />
+    );
     setRegister(null);
     fetch(`${url}/auth/login`, {
       method: "POST",

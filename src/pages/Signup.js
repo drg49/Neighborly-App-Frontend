@@ -29,7 +29,13 @@ const Signup = (props) => {
     if (form.username.includes(" ")) {
       setErrorText("Username cannot have spaces");
     } else {
-      setSubmit(<Spinner width={120} text="Creating account..." />);
+      setSubmit(
+        <Spinner
+          width={120}
+          style={{ marginTop: "1rem" }}
+          text="Creating account..."
+        />
+      );
       fetch(`${url}/auth/signup`, {
         method: "POST",
         headers: {
