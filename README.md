@@ -3,5 +3,5 @@
 Created by Daniel Gavin
 <br>
 
-<h2>View Backend Repository Here:</h2>
+<h1>View Backend Repository Here:</h1>
 https://github.com/drg49/Neighborly-App-Backend
